@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 //Database setup
-mongoose.connect(process.env.MONGOLAB_OLIVE, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.MONGOLAB_OLIVE_URI, {useNewUrlParser: true})
 .then(() => console.log("Connected to database"))
 .catch( err => console.error(process.env.MONGODB_URI));
 
