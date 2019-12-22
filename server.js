@@ -1,14 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-//const config = require('./config');
 const mongoose = require('mongoose');
-//const request = require('request');
+
 
 const app = express();
 
 //Database setup
-mongoose.connect("mongodb://127.0.0.1:27017", {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true})
 .then(() => console.log("Connected to database"))
 .catch( err => console.error("Error"));
 
@@ -32,14 +31,7 @@ app.use('', apiRoutes);
 
 
 //Start Server
-
-//const port = process.env.PORT || 8080 || 3000;
 const port = 3000;
-
-//mongoose.connect(config.databasecloud, {useNewUrlParser: true});
-
-//app.set('secret_key', config.secret_key);
-
 
 app.listen(port);
 
