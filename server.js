@@ -9,7 +9,7 @@ const app = express();
 //Database setup
 mongoose.connect(process.env.MONGOLAB_OLIVE_URI, {useNewUrlParser: true, useUnifiedTopology: true})
 .then(() => console.log("Connected to database"))
-.catch( err => console.error(process.env.MONGODB_URI));
+.catch( err => console.error("Error"));
 
 //Middleware setup
 app.use(express.urlencoded({extended: true}));
@@ -31,7 +31,7 @@ app.use('', apiRoutes);
 
 
 //Start Server
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.listen(port);
 
