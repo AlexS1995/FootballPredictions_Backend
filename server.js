@@ -15,6 +15,21 @@ mongoose.connect(process.env.MONGOLAB_OLIVE_URI, {useNewUrlParser: true, useUnif
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
+app.use(function(req){
+    let token = req.header.token;
+
+    admin.auth().verifyIdToken(token)
+  .then(function(decodedToken) {
+    let uid = decodedToken.uid;
+    
+  }).catch(function(error) {
+    console.log("Error on token verification");
+  });
+
+}
+
+);
+
 //Controller setup
 const bet_controller = require('./controllers/BetController');
 
