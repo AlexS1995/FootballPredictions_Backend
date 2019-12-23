@@ -25,7 +25,7 @@ exports.create_bet = function(req, res){
 }
 
 exports.delete_bet = function(req, res){
-    Trip.findByIdAndDelete(req.params.bet_id, function (err){
+    Bet.findByIdAndDelete(req.params.bet_id, function (err){
         if (err) {
             res.json(err);
         } else {
