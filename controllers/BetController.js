@@ -1,7 +1,7 @@
 const Bet = require('../models/BetModel.js');
 
 exports.get_my_bets = function(req, res){
-    Bet.find({uid: req.body.uid}, function (err, bets) {
+    Bet.find({uid: req.get("uid")}, function (err, bets) {
         res.json(bets);
     });
 }
