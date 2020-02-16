@@ -11,6 +11,6 @@ const betSchema = new Schema({
     matches: [{home: {type: String}, away: {type: String}, value: {type: String}}]
 });
 
-//betSchema.plugin(uniqueValidator);
+betSchema.plugin(uniqueValidator);
 
 module.exports = mongoose.model('Bet', betSchema);
