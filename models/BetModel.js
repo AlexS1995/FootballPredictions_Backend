@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 
 mongoose.set('useCreateIndex', true);
 
-const betSchema = new Schema({
+const betSchema = new mongoose.Schema({
     uid: {type: String, required: true},
     date: {type: String, required: true},
     matches: [{home: {type: String}, away: {type: String}, value: {type: String}}]
