@@ -9,7 +9,6 @@ exports.get_my_bets = function(req, res){
 exports.create_bet = function(req, res){
     let bet = new Bet({
         uid: req.body.uid,
-        timestamp: req.body.timestamp,
         date: req.body.date,
         matches: req.body.matches
     });
