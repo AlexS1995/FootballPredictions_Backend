@@ -3,13 +3,13 @@ const Bet = require('../models/BetModel.js');
 exports.get_my_bets = function(req, res){
     Bet.find({uid: req.get("uid")}, function (err, bets) {
         res.json(bets);
-        //res.json({id:"1"})
     });
 }
 
 exports.create_bet = function(req, res){
     bet = new Bet({
         uid: req.body.uid,
+        description: req.body.description,
         date: req.body.date,
         matches: req.body.matches
     });
