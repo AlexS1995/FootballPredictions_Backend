@@ -14,7 +14,7 @@ exports.create_bet = function(req, res){
     });
 
     bet.save().then(
-        result => res.json({success : true, result: result})
+        result => res.json({success : true, result: "Success"})
     )
     .catch(
         err => {
