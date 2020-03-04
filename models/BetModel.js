@@ -9,7 +9,7 @@ const betSchema = new Schema({
     uid: {type: String, required: true},
     description: {type: String, required: true},
     date: {type: String, required: true},
-    matches: [{home: {type: String}, away: {type: String}, value: {type: String}}]
+    matches: [{home: {type: String}, away: {type: String}, value: {type: String}, league: {type: String}}]
 });
 
 //betSchema.plugin(uniqueValidator);
